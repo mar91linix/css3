@@ -1,0 +1,163 @@
+body {
+    height: 100vh;
+    background-color: rgb(9, 188, 248);
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Explicación 1 de la propiedad de Cascada */
+  h1 {
+      color: red;
+      padding-left: 40px;
+  
+  }
+  
+  h1 {
+      color: blue;
+      background-color: rgb(248, 73, 73);
+  }
+  
+  /* Explicación 2 de la propiedad de Cascada */
+  
+  div {
+    color: red;
+  }
+  
+  #nombre {
+    color: blue;
+  }
+  
+  .clase {
+    color: rgb(220, 238, 220);
+  }
+  
+  /** Transforms **/
+  
+  .nube {
+    cursor: pointer;
+    transform: rotateX(180deg) translate(20px, 10px) scale(0.5, 0.5);
+  }
+  
+  /** Animacion **/
+  
+  .contenido-animation {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+ 
+  
+  
+  /** 
+Fotogramas clave **/
+  
+  .cielo {  
+    height: 40%;
+    background-color: rgb(91, 66, 235);
+    position: relative;
+  }
+  
+  .pasto {
+    height: 30%;
+    background-color: rgb(26, 246, 26);
+    position: relative;
+  }
+  
+  .pista {
+    height: 30%;
+    background-color: rgb(238, 32, 101);
+    text-align: left;
+    border-top: 10px solid rgb(214, 103, 177);
+    border-bottom: 10px solid rgb(228, 18, 147);
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .lineas {
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    top: 45%;
+    border-top: 5px dashed rgb(12, 0, 0);
+  }
+  
+  .carro {
+    position: absolute;
+    top: -45%;
+    animation-name: drive;
+    animation-duration: 3s;
+  }
+  
+  @keyframes drive {
+    from{transform: translateX(0)}
+    to{transform: translateX(600px)}
+  }
+  
+
+   /* Animación
+   modo de relleno, repetición, dirección, funciones de temporización   */
+  
+  .carro-animation {
+    position: absolute;
+    top: -45%;
+    animation-name: drive-animation;
+    animation-duration: 3s;
+    /*modo de llenado */
+    animation-fill-mode: both;
+    animation-delay: 1s;
+    /* repitiendo */
+    animation-iteration-count: infinite;
+    /* direccion */
+    animation-direction: normal;
+    /* 
+funciones de cronometraje */
+    animation-timing-function: cubic-bezier(0, 0.77, 1, 0.3);
+  }
+  
+  @keyframes drive-animation {
+    from{transform: translateX(0)}
+    to{transform: translateX(600px)}
+  }
+  
+  /* 
+funciones de cronometraje */
+  
+  .nube-animation {
+    position: absolute;
+  }
+  
+  .nube-animation:nth-child(1) {
+    width: 100px;
+    top: 100px;
+    opacity: 0.5;
+    animation: wind 50s linear infinite alternate;
+  }
+  
+  .nube-animation:nth-child(2) {
+    width: 150px;
+    top: 0;
+    animation: wind 50s linear infinite reverse;
+  }
+  
+  @keyframes wind {
+    from{left: 0}
+    to{left: 1000px}
+  }
+ 
+
+
+
+.circulo {
+    width: fit-content;
+    color: rgb(1, 8, 2);
+    background-color: rgb(217, 246, 87);
+    border-radius: 50px;
+    cursor: grab;
+    padding: 35px 10px;
+    margin: 50px auto 0 auto;
+    transition: all 1s;
+}
+.circulo:hover {
+   background-color: rgb(238, 142, 87); 
+   transform: rotate(360deg) scale(2, 2);
+}
